@@ -1,0 +1,43 @@
+﻿<mah:MetroWindow x:Class="EngAssistant.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="AI Grammar Checker"
+                      Height="400" Width="600"
+                      GlowBrush="DodgerBlue"
+                      WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Input -->
+        <TextBox x:Name="InputText" Grid.Row="0" AcceptsReturn="True" TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto" />
+
+        <!-- Process Button -->
+        <Button x:Name="ProcessButton" Grid.Row="1" Content="Rephrase" Margin="0,10,0,10"
+                Click="ProcessButton_Click"/>
+
+        <!-- Loader -->
+        <ProgressBar x:Name="Loader" Grid.Row="1" Height="5" Margin="0,40,0,0"
+                     IsIndeterminate="True" Visibility="Collapsed" />
+
+        <!-- Output -->
+        <TextBox x:Name="OutputText" Grid.Row="2" AcceptsReturn="True" TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
+
+        <!-- Copy Button -->
+        <Button x:Name="CopyButton" Grid.Row="3" Content="Copy Result" Margin="0,10,0,0"
+                Click="CopyButton_Click"/>
+
+        <!-- Status Message -->
+        <TextBlock x:Name="StatusMessage" Grid.Row="4" Foreground="DarkGreen" FontWeight="Bold"
+                   Text="Ready." Margin="0,10,0,0" />
+    </Grid>
+</mah:MetroWindow>
